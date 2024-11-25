@@ -2,44 +2,35 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public Transform firePoint; // The point from where bullets are fired
-    public GameObject bulletPrefab; // Bullet prefab to instantiate
-    public float bulletSpeed = 10f; // Speed of the bullet
-    public bool hasGun = false; // Track if player is holding the gun
+    public GameObject bulletPrefab; // Bullet prefab
+    public Transform firePoint; // Where bullets spawn
+    public float bulletSpeed = 10f; // Bullet speed
+    private BulletPool bulletPool; // Reference to the bullet pool
 
-    void Update()
+    private void Start()
     {
-        if (hasGun)
+        bulletPool = FindObjectOfType<BulletPool>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0)) // Left mouse button pressed
         {
-            // Check for shooting input
-            if (Input.GetMouseButtonDown(0)) // Left mouse button
-            {
-                Shoot();
-            }
+            Shoot();
         }
     }
 
-    public void EquipGun()
+    private void Shoot()
     {
-        hasGun = true; // Mark the gun as equipped
-        Debug.Log("Gun equipped!");
-    }
-
-    void Shoot()
-    {
-        if (bulletPrefab != null && firePoint != null)
+        if (bulletPool != null)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
+            GameObject bullet = bulletPool.GetBullet();
+            if (bullet != null)
             {
-                rb.velocity = firePoint.right * bulletSpeed; // Add velocity to the bullet
+                bullet.transform.position = firePoint.position;
+                bullet.transform.rotation = firePoint.rotation;
+                bullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletSpeed;
             }
-            Debug.Log("Bullet fired!");
-        }
-        else
-        {
-            Debug.LogWarning("FirePoint or BulletPrefab is missing!");
         }
     }
 }

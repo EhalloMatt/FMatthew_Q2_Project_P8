@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -27,7 +24,7 @@ public class PlayerScript : MonoBehaviour
 
 
     Vector2 startPosition;
-    
+
 
 
 
@@ -51,7 +48,7 @@ public class PlayerScript : MonoBehaviour
             (groundCheck.position, checkRadius, whatIsGround);
 
     }
-     void Update()
+    void Update()
     {
         PlayerJump();
     }
@@ -80,7 +77,7 @@ public class PlayerScript : MonoBehaviour
 
     void PlayerJump()
     {
-        if(isGrounded == true)
+        if (isGrounded == true)
         {
             extraJumps = jumpValue;
             animator.SetBool("Jumping", false);
@@ -109,5 +106,5 @@ public class PlayerScript : MonoBehaviour
     {
         rb.position = startPosition;
     }
-}    
+}
 

@@ -2,26 +2,16 @@ using UnityEngine;
 
 public class GunAimScript : MonoBehaviour
 {
-    public Transform firePoint; // Fire point of the gun (where bullets come out)
-    private Transform gunTransform; // The gun transform to adjust
-    private Vector2 aimDirection; // Direction the gun will aim at
-    private Vector2 mousePosition; // The current mouse position in world space
+    public Transform gunTransform;
 
-    void Start()
+    private void Update()
     {
-        // Get the gun's transform if it's not set
-        gunTransform = transform;
-    }
+        // Ensure the camera reference is correct
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePosition - gunTransform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-    void Update()
-    {
-        // Get the current mouse position in world space
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Calculate the direction from the gun to the mouse (no scaling or rotation applied)
-        aimDirection = mousePosition - (Vector2)gunTransform.position;
-
-        // Log the aim direction for debugging
-        Debug.Log($"Aim Direction: {aimDirection}");
+        // Apply rotation to the gun only
+        gunTransform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
     [SerializeField] KeyLockScript keyLock;
 
-     void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         var player = col.GetComponent
-            <PlayerScript> ();
+            <PlayerScript>();
         if (player != null)
         {
             transform.SetParent(player.transform);
@@ -18,10 +16,10 @@ public class KeyScript : MonoBehaviour
 
 
         }
-        var KeyLocked = col.GetComponent<KeyLockScript> ();
-        if(keyLock != null && KeyLocked ==keyLock)
+        var KeyLocked = col.GetComponent<KeyLockScript>();
+        if (keyLock != null && KeyLocked == keyLock)
         {
-            keyLock.Unlock ();
+            keyLock.Unlock();
             Destroy(gameObject);
         }
     }
