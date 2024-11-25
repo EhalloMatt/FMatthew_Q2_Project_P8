@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,7 +40,7 @@ public class BrickScript : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(clip);
 
         }
-        else if(solidBrick == true && canUse == true) 
+        else if (solidBrick == true && canUse == true)
         {
             bricks.Play(true);
             canUse = false;
@@ -50,16 +48,16 @@ public class BrickScript : MonoBehaviour
             AudioClip clip = boxSounds[0];
             GetComponent<AudioSource>().PlayOneShot(clip);
         }
-        else 
+        else
         {
             AudioClip clip = boxSounds[1];
             GetComponent<AudioSource>().PlayOneShot(clip);
         }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}

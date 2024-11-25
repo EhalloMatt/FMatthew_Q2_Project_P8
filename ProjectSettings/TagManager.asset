@@ -6,6 +6,9 @@ TagManager:
   tags:
   - BouncePad
   - Bullets
+  - AddHealth
+  - AddContainer
+  - Gun
   layers:
   - Default
   - TransparentFX

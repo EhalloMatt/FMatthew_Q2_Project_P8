@@ -1,45 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public Transform firePoint; // The point from where bullets are fired
-    public GameObject bulletPrefab; // Bullet prefab to instantiate
-    public float bulletSpeed = 10f; // Speed of the bullet
-    public bool hasGun = false; // Track if player is holding the gun
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public float fireRate = 0.2f;
+    private float nextFireTime;
 
-    void Update()
+    private void Update()
     {
-        if (hasGun)
+        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
-            // Check for shooting input
-            if (Input.GetMouseButtonDown(0)) // Left mouse button
-            {
-                Shoot();
-            }
+            nextFireTime = Time.time + fireRate;
+            Fire();
         }
     }
 
-    public void EquipGun()
+    private void Fire()
     {
-        hasGun = true; // Mark the gun as equipped
-        Debug.Log("Gun equipped!");
-    }
-
-    void Shoot()
-    {
-        if (bulletPrefab != null && firePoint != null)
+        if (firePoint == null || bulletPrefab == null)
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = firePoint.right * bulletSpeed; // Add velocity to the bullet
-            }
-            Debug.Log("Bullet fired!");
+            Debug.LogWarning("FirePoint or BulletPrefab is not assigned in the GunScript!");
+            return;
         }
-        else
+
+        // Instantiate the bullet at the fire point
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        // Add velocity to the bullet
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
         {
-            Debug.LogWarning("FirePoint or BulletPrefab is missing!");
+            rb.velocity = firePoint.right * 10f; // Adjust speed as needed
         }
     }
 }
