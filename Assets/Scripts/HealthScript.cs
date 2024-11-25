@@ -1,3 +1,7 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,7 +47,7 @@ public class HealthScript : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
-
+        
 
     }
 
@@ -64,7 +68,7 @@ public class HealthScript : MonoBehaviour
     public void AddContainer()
     {
         Health++;
-        if (numOfHearts <= hearts.Length)
+        if(numOfHearts <= hearts.Length)
         {
             numOfHearts += 1;
         }

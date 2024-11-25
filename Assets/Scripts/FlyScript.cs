@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FlyScript : MonoBehaviour
@@ -43,10 +44,10 @@ public class FlyScript : MonoBehaviour
             }
         }
     }
-    void OnCollisionEnter2D(Collision2D col)
+     void OnCollisionEnter2D(Collision2D col)
     {
         Vector2 normal = col.contacts[0].normal;
-        if (normal.y <= -.5)
+        if(normal.y <= -.5)
         {
             StartCoroutine(Die());
         }
@@ -72,7 +73,7 @@ public class FlyScript : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, distance);
