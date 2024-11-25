@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
-    public float bulletForce = 20f;
+    public Transform firePoint; // Reference to the fire point of the gun
+    public GameObject bulletPrefab; // Bullet prefab to instantiate
+    public float bulletForce = 20f; // Public variable for bullet speed
 
     void Update()
     {

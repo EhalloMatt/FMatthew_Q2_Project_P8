@@ -4,29 +4,40 @@ public class GunAimScript : MonoBehaviour
 {
     private Camera mainCamera;
 
-    private void Start()
+    void Start()
     {
+        // Reference the main camera
         mainCamera = Camera.main;
     }
 
-    private void Update()
+    void Update()
     {
-        if (mainCamera == null)
+        // Get the mouse position on the screen
+        Vector3 mouseScreenPosition = Input.mousePosition;
+
+        // Convert the screen position of the mouse to a ray in world space
+        Ray ray = mainCamera.ScreenPointToRay(mouseScreenPosition);
+
+        // Define a plane at the gun's position (in world space) facing the camera
+        Plane plane = new Plane(Vector3.forward, transform.position);
+
+        // Find the point where the ray intersects the plane
+        if (plane.Raycast(ray, out float distance))
         {
-            Debug.LogWarning("Main camera not found!");
-            return;
+            Vector3 mouseWorldPosition = ray.GetPoint(distance);
+
+            // Calculate the direction from the gun to the mouse position
+            Vector3 direction = mouseWorldPosition - transform.position;
+
+            // Keep the rotation in 2D
+            direction.z = 0;
+
+            // Calculate the angle and rotate the gun
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // Debugging: Log the mouse world position and gun angle
+            Debug.Log($"Mouse World Position: {mouseWorldPosition}, Gun Angle: {angle}");
         }
-
-        // Convert mouse position to world point
-        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0f; // Ignore Z-axis
-
-        // Calculate the angle towards the mouse position
-        Vector3 direction = mouseWorldPosition - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Apply rotation
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-        Debug.Log($"Mouse Position: {mouseWorldPosition}, Gun Angle: {angle}");
     }
 }
