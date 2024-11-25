@@ -2,27 +2,31 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public Transform firePoint; // Where bullets are fired from
-    public GameObject bulletPrefab; // Bullet prefab
-    public GameObject hitEffectPrefab; // Optional: Hit effect prefab
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public float bulletForce = 20f;
 
-    private void Update()
+    void Update()
     {
-        if (Input.GetButtonDown("Fire1")) // Assuming left mouse button fires
+        if (Input.GetMouseButtonDown(0)) // Left-click to shoot
         {
             Fire();
         }
     }
 
-    private void Fire()
+    void Fire()
     {
         if (bulletPrefab == null || firePoint == null)
         {
-            Debug.LogWarning($"Bullet Prefab: {bulletPrefab}, Fire Point: {firePoint} not assigned!");
+            Debug.LogWarning("Bullet Prefab: " + bulletPrefab + ", Fire Point: " + firePoint + " not assigned!");
             return;
         }
 
-        // Instantiate the bullet
-        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
+        }
     }
 }

@@ -2,24 +2,21 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float lifeTime = 2f; // Bullet lifespan
+    public float speed = 10f;
+    public GameObject deathEffect; // Assign your particle effect prefab here
 
-    private void Start()
+    void Update()
     {
-        Destroy(gameObject, lifeTime); // Destroy bullet after a certain time
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy")) // Check for enemy tag
+        if (collision.CompareTag("Enemy"))
         {
-            Enemy enemy = collision.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.OnHit();
-            }
-
-            Destroy(gameObject); // Destroy bullet on hit
+            Instantiate(deathEffect, collision.transform.position, Quaternion.identity);
+            Destroy(collision.gameObject); // Destroy the enemy
+            Destroy(gameObject); // Destroy the bullet
         }
     }
 }
