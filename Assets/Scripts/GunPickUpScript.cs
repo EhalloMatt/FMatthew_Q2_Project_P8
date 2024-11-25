@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class GunPickUpScript : MonoBehaviour
 {
-    public Transform gun; // Reference to the gun
-    public Transform playerHand; // Where the gun attaches to the player
+    public Transform playerRightHand;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            gun.SetParent(playerHand, worldPositionStays: false); // Ensure it follows the hand's local space
-            gun.localPosition = Vector3.zero; // Reset local position
-            gun.localRotation = Quaternion.identity; // Reset local rotation
-            Debug.Log("Gun picked up and parented to the hand.");
+            // Parent the gun to the player's right hand
+            transform.SetParent(playerRightHand);
+            transform.localPosition = Vector3.zero; // Reset position relative to hand
+            transform.localRotation = Quaternion.identity; // Reset rotation relative to hand
+            transform.localScale = new Vector3(0.15f, 0.15f, 1); // Ensure correct scale
         }
     }
 }

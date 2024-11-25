@@ -1,0 +1,19 @@
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    public GameObject hitEffectPrefab; // Drag your particle effect prefab here.
+
+    // Method to handle being hit
+    public void OnHit()
+    {
+        // Instantiate the hit effect at the enemy's position
+        if (hitEffectPrefab != null)
+        {
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        // Destroy the enemy
+        Destroy(gameObject);
+    }
+}
