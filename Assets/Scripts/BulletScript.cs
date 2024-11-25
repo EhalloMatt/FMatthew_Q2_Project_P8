@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float lifeTime = 5f;
+    [SerializeField] private float lifetime = 2f;
 
-    void Start()
+    private void Start()
     {
-        Destroy(gameObject, lifeTime);
+        Destroy(gameObject, lifetime); // Automatically destroy bullet after a set time
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Add collision handling here if necessary
         Destroy(gameObject);
     }
 }

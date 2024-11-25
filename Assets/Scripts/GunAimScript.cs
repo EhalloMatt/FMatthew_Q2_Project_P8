@@ -2,21 +2,36 @@ using UnityEngine;
 
 public class GunAimScript : MonoBehaviour
 {
-    public Transform gun;
+    private Camera mainCamera;
 
-    void Update()
+    private void Start()
     {
-        Aim();
+        // Cache the Main Camera
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            Debug.LogError("Main Camera is not tagged or missing.");
+        }
     }
 
-    void Aim()
+    private void Update()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = 0f;
+        AimAtMouse();
+    }
 
-        Vector2 direction = (mousePosition - gun.position).normalized;
+    private void AimAtMouse()
+    {
+        if (mainCamera == null) return;
+
+        // Get mouse position in world space
+        Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0; // Ensure the Z position is consistent (2D game)
+
+        // Calculate direction to mouse
+        Vector3 direction = mousePos - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        gun.rotation = Quaternion.Euler(0, 0, angle);
+        // Rotate gun to point at the mouse
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }

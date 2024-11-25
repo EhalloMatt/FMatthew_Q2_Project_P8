@@ -1,38 +1,43 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BulletPool : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public int poolSize = 10;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private int poolSize = 10;
+    private Queue<GameObject> bulletPool;
 
-    private List<GameObject> bulletPool;
-
-    void Start()
+    private void Awake()
     {
-        bulletPool = new List<GameObject>();
-
+        bulletPool = new Queue<GameObject>();
         for (int i = 0; i < poolSize; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.SetActive(false);
-            bulletPool.Add(bullet);
+            bulletPool.Enqueue(bullet);
         }
     }
 
-    public GameObject GetBullet()
+    public GameObject GetBullet(Vector3 position, Quaternion rotation)
     {
-        foreach (var bullet in bulletPool)
+        if (bulletPool.Count > 0)
         {
-            if (!bullet.activeInHierarchy)
-            {
-                bullet.SetActive(true);
-                return bullet;
-            }
+            GameObject bullet = bulletPool.Dequeue();
+            bullet.transform.position = position;
+            bullet.transform.rotation = rotation;
+            bullet.SetActive(true);
+            return bullet;
         }
+        else
+        {
+            Debug.LogWarning("Bullet Pool is empty!");
+            return null;
+        }
+    }
 
-        GameObject newBullet = Instantiate(bulletPrefab);
-        bulletPool.Add(newBullet);
-        return newBullet;
+    public void ReturnBullet(GameObject bullet)
+    {
+        bullet.SetActive(false);
+        bulletPool.Enqueue(bullet);
     }
 }

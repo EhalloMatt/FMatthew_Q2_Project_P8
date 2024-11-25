@@ -2,39 +2,27 @@ using UnityEngine;
 
 public class GunPickUpScript : MonoBehaviour
 {
-    public GameObject gun;         // Reference to the gun object
-    public Transform playerHand;   // Transform where the gun will be attached
+    public GameObject gunPrefab; // Assign your gun prefab here
+    private bool isGunPickedUp = false;
 
-    private bool canPickUp = false;
-
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (canPickUp && Input.GetKeyDown(KeyCode.E))
+        if (other.CompareTag("Player") && !isGunPickedUp)
         {
-            PickUpGun();
-        }
-    }
+            GunScript gunScript = other.GetComponentInChildren<GunScript>();
+            if (gunScript == null)
+            {
+                // Attach gunPrefab to player without instantiating a new clone
+                GameObject gun = Instantiate(gunPrefab, other.transform);
+                gun.transform.localPosition = Vector3.zero; // Adjust as needed
+                gun.transform.localRotation = Quaternion.identity;
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            canPickUp = true;
-        }
-    }
+                isGunPickedUp = true;
+                Debug.Log("Gun picked up!");
+            }
 
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            canPickUp = false;
+            // Destroy the pickup object
+            Destroy(gameObject);
         }
-    }
-
-    void PickUpGun()
-    {
-        gun.transform.SetParent(playerHand);
-        gun.transform.localPosition = Vector3.zero;
-        gun.transform.localRotation = Quaternion.identity;
     }
 }
