@@ -5382,7 +5382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 3
-  numOfHearts: 5
+  numOfHearts: 3
   hearts:
   - {fileID: 6914999664593775443}
   - {fileID: 5357049302972207097}
@@ -5864,7 +5864,7 @@ GameObject:
   - component: {fileID: 1957112988960751966}
   - component: {fileID: 6914999664593775443}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Heart 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6095,7 +6095,7 @@ GameObject:
   - component: {fileID: 1545574258644970541}
   - component: {fileID: 5350927460845406337}
   m_Layer: 5
-  m_Name: Heart (3)
+  m_Name: Heart 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6308,7 +6308,7 @@ GameObject:
   - component: {fileID: 2642620080030037324}
   - component: {fileID: 5357049302972207097}
   m_Layer: 5
-  m_Name: Heart (1)
+  m_Name: Heart 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6685,7 +6685,7 @@ GameObject:
   - component: {fileID: 9169097963499235367}
   - component: {fileID: 2469352239131026154}
   m_Layer: 5
-  m_Name: Heart (2)
+  m_Name: Heart 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6875,7 +6875,7 @@ GameObject:
   - component: {fileID: 6910742327080018398}
   - component: {fileID: 5579469383258688768}
   m_Layer: 5
-  m_Name: Heart (4)
+  m_Name: Heart 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7312,10 +7312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c5202f2103507148a45e5c6ba448133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadSprite: {fileID: 0}
-  player: {fileID: 0}
-  distance: 0
-  ememySpeed: 0
+  deadSprite: {fileID: 21300000, guid: 16b07195c544eb64a83e5addfa1a2b90, type: 3}
+  player: {fileID: 1136288716}
+  distance: 6
+  ememySpeed: 3
 --- !u!212 &8616928731329458826
 SpriteRenderer:
   m_ObjectHideFlags: 0
