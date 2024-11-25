@@ -355,6 +355,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6238028284071768523, guid: 9f2090006ba71a34db815b6a58f6077a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -902.4945
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238028284071768523, guid: 9f2090006ba71a34db815b6a58f6077a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -528.75916
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5580,25 +5588,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1136288716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8df2f09cc731254ba01ed336a559a9d, type: 3}
+  m_Script: {fileID: 11500000, guid: 73277833981674a4b8e6f4ca75af23c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   Dust: {fileID: 809634133}
-  rb: {fileID: 0}
-  animator: {fileID: 0}
-  sr: {fileID: 0}
-  horizontal: 0
   jumpForce: 5
   groundCheck: {fileID: 313128023}
   checkRadius: 0.5
   whatIsGround:
+    serializedVersion: 2
     m_Bits: 8
   jumpValue: 1
-  isGrounded: 0
-  extraJumps: 0
-  jumpSound: {fileID: 0}
-  startPosition: {x: 0, y: 0}
 --- !u!95 &1136288722
 Animator:
   serializedVersion: 5
@@ -5667,7 +5668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652ed2f7012b446ea9bdb6415f3e17b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTransform: {fileID: 0}
+  handTransform: {fileID: 1235214113}
   hasGun: 0
 --- !u!1 &1235214112
 GameObject:
