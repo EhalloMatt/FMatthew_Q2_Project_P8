@@ -40,7 +40,6 @@ public class PlayerScript : MonoBehaviour
         extraJumps = jumpValue;
         startPosition = transform.position;
         jumpSound = GetComponent<AudioSource>();
-        
 
     }
 
@@ -92,7 +91,7 @@ public class PlayerScript : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
             extraJumps--;
             animator.SetTrigger("TakeOff");
-            //jumpSound.Play();
+            jumpSound.Play();
         }
         else if (Input.GetButtonDown("Jump")
        && extraJumps == 0 && isGrounded == true)
@@ -100,7 +99,7 @@ public class PlayerScript : MonoBehaviour
 
             rb.velocity = Vector2.up * jumpForce;
             animator.SetTrigger("TakeOff");
-            //jumpSound.Play();
+            jumpSound.Play();
 
         }
 
