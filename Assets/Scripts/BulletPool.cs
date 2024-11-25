@@ -1,15 +1,17 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private int poolSize = 10;
+    public GameObject bulletPrefab;
+    public int poolSize = 10;
+
     private Queue<GameObject> bulletPool;
 
-    private void Awake()
+    private void Start()
     {
         bulletPool = new Queue<GameObject>();
+
         for (int i = 0; i < poolSize; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab);

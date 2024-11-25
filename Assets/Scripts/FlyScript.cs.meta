@@ -3,7 +3,9 @@ guid: 3c5202f2103507148a45e5c6ba448133
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - deadSprite: {fileID: 21300000, guid: 16b07195c544eb64a83e5addfa1a2b90, type: 3}
+  - player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

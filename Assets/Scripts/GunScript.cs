@@ -1,39 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public Transform firePoint;
-    public GameObject bulletPrefab;
-    public float fireRate = 0.2f;
-    private float nextFireTime;
+    public Transform firePoint; // Where bullets spawn
+    public GameObject bulletPrefab; // The bullet prefab
+    public float bulletForce = 20f; // Speed of the bullet
+
+    private Camera mainCamera; // Reference to the main camera
+
+    private void Start()
+    {
+        mainCamera = Camera.main; // Find the main camera
+    }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        RotateGunToMouse();
+
+        if (Input.GetMouseButtonDown(0)) // Left mouse button
         {
-            nextFireTime = Time.time + fireRate;
             Fire();
         }
     }
 
-    private void Fire()
+    private void RotateGunToMouse()
     {
-        if (firePoint == null || bulletPrefab == null)
+        if (mainCamera == null)
         {
-            Debug.LogWarning("FirePoint or BulletPrefab is not assigned in the GunScript!");
+            Debug.LogError("Main Camera not assigned or found.");
             return;
         }
 
-        // Instantiate the bullet at the fire point
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0f; // Ensure z is zero for 2D
 
-        // Add velocity to the bullet
+        Vector3 direction = mousePosition - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+
+    private void Fire()
+    {
+        if (bulletPrefab == null || firePoint == null)
+        {
+            Debug.LogWarning("Bullet Prefab or Fire Point not assigned!");
+            return;
+        }
+
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = firePoint.right * 10f; // Adjust speed as needed
+            rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
         }
     }
 }

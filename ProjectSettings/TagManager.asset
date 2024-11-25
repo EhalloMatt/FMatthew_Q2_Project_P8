@@ -9,6 +9,8 @@ TagManager:
   - AddHealth
   - AddContainer
   - Gun
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
