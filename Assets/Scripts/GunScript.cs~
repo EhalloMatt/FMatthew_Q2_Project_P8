@@ -1,0 +1,45 @@
+using UnityEngine;
+
+public class Gun : MonoBehaviour
+{
+    public GameObject bulletPrefab; // Bullet prefab to instantiate
+    public Transform firePoint; // Where bullets are fired from
+    public int maxAmmo = 5; // Maximum number of bullets
+    private int currentAmmo;
+
+    public float bulletSpeed = 20f; // Speed of the bullet
+
+    void Start()
+    {
+        // Initialize ammo count
+        currentAmmo = maxAmmo;
+    }
+
+    void Update()
+    {
+        // Check for player input to shoot
+        if (Input.GetButtonDown("Fire1") && currentAmmo > 0) // Replace "Fire1" with your input key
+        {
+            Shoot();
+        }
+    }
+
+    void Shoot()
+    {
+        // Instantiate the bullet at the fire point
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+        // Add velocity to the bullet
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = firePoint.right * bulletSpeed; // Adjust direction as needed
+        }
+
+        // Decrease ammo count
+        currentAmmo--;
+
+        // Debug ammo count
+        Debug.Log($"Bullets remaining: {currentAmmo}");
+    }
+}

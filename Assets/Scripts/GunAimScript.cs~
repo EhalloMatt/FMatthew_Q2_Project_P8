@@ -1,0 +1,19 @@
+using UnityEngine;
+
+public class GunAim : MonoBehaviour
+{
+    public Transform firePoint; // The point from which bullets are fired (usually the gun's barrel)
+
+    void Update()
+    {
+        // Get the mouse position in world space
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Calculate the direction from the gun (firePoint) to the mouse position
+        Vector2 direction = (mousePosition - firePoint.position).normalized;
+
+        // Rotate the gun to face the mouse position
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // Get angle in degrees
+        firePoint.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+}

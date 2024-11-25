@@ -1,0 +1,50 @@
+using UnityEngine;
+
+public class GunPickup : MonoBehaviour
+{
+    public Transform handTransform; // Player's hand to attach the gun to
+    public float pickupDistance = 2f; // Distance at which the player can pick up the gun
+
+    private bool isPlayerNearby = false;
+
+    void Update()
+    {
+        if (isPlayerNearby && Input.GetKeyDown(KeyCode.E)) // Replace with your desired pickup key
+        {
+            PickUpGun();
+        }
+    }
+
+    void PickUpGun()
+    {
+        // Attach the gun to the player's hand
+        transform.position = handTransform.position; // Place the gun at the hand
+        transform.SetParent(handTransform); // Make the gun a child of the player's hand
+
+        // Optionally, disable physics if you want the gun to follow the hand smoothly
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.isKinematic = true; // Disable physics while the gun is attached
+        }
+
+        Debug.Log("Gun picked up!");
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerNearby = true;
+            Debug.Log("Press 'E' to pick up the gun.");
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerNearby = false;
+        }
+    }
+}
