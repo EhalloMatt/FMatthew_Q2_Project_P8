@@ -4,23 +4,25 @@ using UnityEngine;
 public class BulletPool : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public int poolSize = 20;
-    private List<GameObject> pool;
+    public int poolSize = 10;
 
-    private void Start()
+    private List<GameObject> bulletPool;
+
+    void Start()
     {
-        pool = new List<GameObject>();
+        bulletPool = new List<GameObject>();
+
         for (int i = 0; i < poolSize; i++)
         {
             GameObject bullet = Instantiate(bulletPrefab);
             bullet.SetActive(false);
-            pool.Add(bullet);
+            bulletPool.Add(bullet);
         }
     }
 
     public GameObject GetBullet()
     {
-        foreach (GameObject bullet in pool)
+        foreach (var bullet in bulletPool)
         {
             if (!bullet.activeInHierarchy)
             {
@@ -30,8 +32,7 @@ public class BulletPool : MonoBehaviour
         }
 
         GameObject newBullet = Instantiate(bulletPrefab);
-        newBullet.SetActive(true);
-        pool.Add(newBullet);
+        bulletPool.Add(newBullet);
         return newBullet;
     }
 }

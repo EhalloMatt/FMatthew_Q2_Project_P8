@@ -2,35 +2,40 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Bullet prefab
-    public Transform firePoint; // Where bullets spawn
-    public float bulletSpeed = 10f; // Bullet speed
-    private BulletPool bulletPool; // Reference to the bullet pool
+    public GameObject bulletPrefab;  // The bullet prefab
+    public Transform firePoint;      // Where bullets spawn
+    public float bulletSpeed = 20f;  // Speed of the bullet
+    public float fireRate = 0.5f;    // Time between shots
 
-    private void Start()
-    {
-        bulletPool = FindObjectOfType<BulletPool>();
-    }
+    private float nextFireTime = 0f;
 
-    private void Update()
+    void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Left mouse button pressed
+        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
-            Shoot();
+            Fire();
+            nextFireTime = Time.time + fireRate;
         }
     }
 
-    private void Shoot()
+    private void Fire()
     {
-        if (bulletPool != null)
+        if (firePoint == null)
         {
-            GameObject bullet = bulletPool.GetBullet();
-            if (bullet != null)
-            {
-                bullet.transform.position = firePoint.position;
-                bullet.transform.rotation = firePoint.rotation;
-                bullet.GetComponent<Rigidbody2D>().velocity = firePoint.right * bulletSpeed;
-            }
+            Debug.LogWarning("Fire point is not assigned.");
+            return;
+        }
+
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+
+        if (rb != null)
+        {
+            rb.velocity = firePoint.right * bulletSpeed;
+        }
+        else
+        {
+            Debug.LogWarning("Bullet prefab does not have a Rigidbody2D component.");
         }
     }
 }

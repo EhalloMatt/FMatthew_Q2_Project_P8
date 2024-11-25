@@ -2,42 +2,39 @@ using UnityEngine;
 
 public class GunPickUpScript : MonoBehaviour
 {
-    public Transform handTransform; // Player's hand where the gun will attach
-    private GameObject gunInRange; // The gun currently in range of the player
+    public GameObject gun;         // Reference to the gun object
+    public Transform playerHand;   // Transform where the gun will be attached
 
-    private void Update()
+    private bool canPickUp = false;
+
+    void Update()
     {
-        // If gun is in range and E is pressed, pick up the gun
-        if (gunInRange != null && Input.GetKeyDown(KeyCode.E))
+        if (canPickUp && Input.GetKeyDown(KeyCode.E))
         {
             PickUpGun();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the object is tagged as "Gun"
-        if (other.CompareTag("Gun"))
+        if (collision.CompareTag("Player"))
         {
-            gunInRange = other.gameObject; // Store reference to the gun
+            canPickUp = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D collision)
     {
-        // Remove reference when the player leaves the gun's trigger area
-        if (other.CompareTag("Gun"))
+        if (collision.CompareTag("Player"))
         {
-            gunInRange = null;
+            canPickUp = false;
         }
     }
 
-    private void PickUpGun()
+    void PickUpGun()
     {
-        // Attach the gun to the player's hand
-        gunInRange.transform.position = handTransform.position;
-        gunInRange.transform.SetParent(handTransform); // Parent the gun to the hand
-        gunInRange.GetComponent<Rigidbody2D>().isKinematic = true; // Disable physics
-        gunInRange.GetComponent<Collider2D>().enabled = false; // Disable collision
+        gun.transform.SetParent(playerHand);
+        gun.transform.localPosition = Vector3.zero;
+        gun.transform.localRotation = Quaternion.identity;
     }
 }

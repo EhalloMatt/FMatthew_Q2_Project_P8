@@ -2,25 +2,15 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float lifetime = 5f;
+    public float lifeTime = 5f;
 
-    private void OnEnable()
+    void Start()
     {
-        Invoke(nameof(Deactivate), lifetime);
+        Destroy(gameObject, lifeTime);
     }
 
-    private void OnDisable()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        CancelInvoke(nameof(Deactivate));
-    }
-
-    private void Deactivate()
-    {
-        gameObject.SetActive(false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
