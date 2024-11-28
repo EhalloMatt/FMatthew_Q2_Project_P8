@@ -2,21 +2,30 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public GameObject deathEffect; // Assign the effect prefab in the inspector
+    public float speed = 10f;
+    public int damage = 1;
+    private Rigidbody2D rb;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Start()
     {
-        // Check if the collided object has the "Enemy" tag
-        if (collision.CompareTag("Enemy"))
+        rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
         {
-            // Instantiate the death effect at the enemy's position and rotation
-            Instantiate(deathEffect, collision.transform.position, Quaternion.identity);
+            rb.velocity = transform.right * speed;
+        }
+    }
 
-            // Destroy the enemy object
-            Destroy(collision.gameObject);
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            EnemyScript enemy = other.GetComponent<EnemyScript>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+            }
 
-            // Destroy the bullet
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroy bullet after collision
         }
     }
 }

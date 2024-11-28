@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - deadSprite: {fileID: 21300000, guid: 16b07195c544eb64a83e5addfa1a2b90, type: 3}
-  - player: {instanceID: 0}
+  - player: {fileID: 5952644520722241181, guid: 9c67a421a373196448d28b248069876d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,22 +1,25 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
-    public GameObject hitEffectPrefab; // Drag your particle effect prefab here.
+    public int health = 3;
+    public GameObject deathEffect;
 
-    public void OnHit()
+    public void TakeDamage(int damage)
     {
-        if (hitEffectPrefab != null)
+        health -= damage;
+        if (health <= 0)
         {
-            // Instantiate the hit effect
-            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            Die();
         }
-        else
-        {
-            Debug.LogWarning("Hit Effect Prefab not assigned!");
-        }
+    }
 
-        // Destroy the enemy
-        Destroy(gameObject);
+    void Die()
+    {
+        if (deathEffect != null)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject); // Destroy enemy
     }
 }
