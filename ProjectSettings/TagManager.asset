@@ -11,6 +11,8 @@ TagManager:
   - Gun
   - Enemy
   - Wall
+  - FakeBox
+  - Fake
   layers:
   - Default
   - TransparentFX
