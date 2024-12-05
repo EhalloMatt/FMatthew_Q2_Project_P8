@@ -1,65 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BrickScript : MonoBehaviour
 {
-    ParticleSystem bricks;
-    public bool solidBrick = false;
-    public bool canUse = true;
-    public Sprite usedSprite;
-    [SerializeField] List<AudioClip> boxSounds;
+    [SerializeField] private bool canBreakByBullet = true;
+    [SerializeField] private GameObject breakEffectPrefab; // Drag your "Particle System" prefab here in the Inspector
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        bricks = GetComponentInChildren
-            <ParticleSystem>();
-    }
+        if (canBreakByBullet && collision.CompareTag("Bullets"))
+        {
+            Debug.Log("Brick hit by bullet! Destroying brick...");
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.collider.GetComponent
-            <PlayerScript>() == null)
-        {
-            return;
-        }
-        if (col.contacts[0].normal.y > 0.5f)
-        {
-            Break();
-        }
-    }
+            // Play the particle effect at the brick's position
+            if (breakEffectPrefab != null)
+            {
+                GameObject effect = Instantiate(breakEffectPrefab, transform.position, Quaternion.identity);
+                ParticleSystem ps = effect.GetComponent<ParticleSystem>();
+                if (ps != null)
+                {
+                    ps.Play(); // Ensure the particle system is triggered
+                }
+                Destroy(effect, ps.main.duration); // Clean up the particle effect after it's done
+            }
+            else
+            {
+                Debug.LogWarning("No break effect prefab assigned to this brick!");
+            }
 
-    void Break()
-    {
-        if (solidBrick == false && canUse == true)
-        {
-            bricks.Play();
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
-            AudioClip clip = boxSounds[0];
-            GetComponent<AudioSource>().PlayOneShot(clip);
-
-        }
-        else if(solidBrick == true && canUse == true) 
-        {
-            bricks.Play(true);
-            canUse = false;
-            GetComponent<SpriteRenderer>().sprite = usedSprite;
-            AudioClip clip = boxSounds[0];
-            GetComponent<AudioSource>().PlayOneShot(clip);
-        }
-        else 
-        {
-            AudioClip clip = boxSounds[1];
-            GetComponent<AudioSource>().PlayOneShot(clip);
-        }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            Destroy(gameObject); // Destroy the brick
         }
     }
+}
