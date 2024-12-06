@@ -13,6 +13,7 @@ TagManager:
   - Wall
   - FakeBox
   - Fake
+  - Destroyable
   layers:
   - Default
   - TransparentFX
