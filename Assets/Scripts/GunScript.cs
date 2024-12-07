@@ -29,7 +29,6 @@ public class GunScript : MonoBehaviour
 
     private void Fire()
     {
-        Debug.Log("Firing bullet...");
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -38,7 +37,6 @@ public class GunScript : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Bullet Rigidbody2D not found!");
         }
     }
 }

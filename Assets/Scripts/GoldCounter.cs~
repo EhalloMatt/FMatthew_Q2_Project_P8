@@ -1,0 +1,19 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GoldCounter : MonoBehaviour
+{
+    public Text goldText; // Drag your UI text object here in the Inspector
+    private int totalGold = 0;
+
+    public void AddGold(int amount)
+    {
+        totalGold += amount; // Increase gold count
+        UpdateGoldUI(); // Update the text
+    }
+
+    private void UpdateGoldUI()
+    {
+        goldText.text = "Gold: " + totalGold; // Update the text
+    }
+}

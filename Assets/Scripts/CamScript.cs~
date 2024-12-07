@@ -1,0 +1,37 @@
+using UnityEngine;
+using Cinemachine;
+
+public class CinemachineOrthographicZoom : MonoBehaviour
+{
+    private CinemachineVirtualCamera virtualCamera;
+    private float targetSize;
+    private float zoomSpeed = 5f;
+
+    void Start()
+    {
+        virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        if (virtualCamera != null)
+        {
+            targetSize = virtualCamera.m_Lens.OrthographicSize;
+        }
+    }
+
+    void Update()
+    {
+        // Example Input: Zoom in with "Z", zoom out with "X"
+        if (Input.GetKey(KeyCode.Z))
+        {
+            targetSize = Mathf.Max(targetSize - zoomSpeed * Time.deltaTime, 2f); // Zoom in limit
+        }
+        else if (Input.GetKey(KeyCode.X))
+        {
+            targetSize = Mathf.Min(targetSize + zoomSpeed * Time.deltaTime, 10f); // Zoom out limit
+        }
+
+        // Smooth transition
+        if (virtualCamera != null)
+        {
+            virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, targetSize, Time.deltaTime * zoomSpeed);
+        }
+    }
+}

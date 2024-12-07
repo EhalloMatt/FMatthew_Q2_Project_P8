@@ -36,8 +36,6 @@ public class GunAimScript : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
-            // Debugging: Log the mouse world position and gun angle
-            Debug.Log($"Mouse World Position: {mouseWorldPosition}, Gun Angle: {angle}");
         }
     }
 }

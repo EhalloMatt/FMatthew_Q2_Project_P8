@@ -11,7 +11,7 @@ public class GunPickUpScript : MonoBehaviour
         // Check if the player collided with the trigger
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Player picked up the gun");
+            
             EquipGun();
         }
     }
@@ -20,7 +20,6 @@ public class GunPickUpScript : MonoBehaviour
     {
         if (gun != null && playerHand != null)
         {
-            Debug.Log($"Attaching gun '{gun.name}' to player hand '{playerHand.name}'...");
 
             // Attach the gun to the player's hand
             gun.transform.SetParent(playerHand);
@@ -30,15 +29,12 @@ public class GunPickUpScript : MonoBehaviour
             // Ensure the gun is active
             if (!gun.activeSelf)
             {
-                Debug.LogWarning("Gun was inactive. Activating it.");
                 gun.SetActive(true);
             }
 
-            Debug.Log($"Gun '{gun.name}' equipped successfully as a child of '{playerHand.name}'.");
         }
         else
         {
-            Debug.LogError("Gun or PlayerHand reference is missing!");
         }
     }
 }

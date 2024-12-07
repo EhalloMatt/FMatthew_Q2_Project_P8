@@ -11,9 +11,10 @@ TagManager:
   - Gun
   - Enemy
   - Wall
-  - FakeBox
   - Fake
   - Destroyable
+  - Gold
+  - Fakebox
   layers:
   - Default
   - TransparentFX

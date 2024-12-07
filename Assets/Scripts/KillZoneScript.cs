@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class KillZoneScript : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy" || col.gameObject.tag == "Fake")
+        // Check for the player tag
+        if (collision.CompareTag("Player"))
         {
-            var player = col.GetComponent<PlayerScript>();
-            player.ResetToStart();
+            // Reset the player to the start position
+            PlayerScript playerScript = collision.GetComponent<PlayerScript>();
+            if (playerScript != null)
+            {
+                playerScript.ResetToStart();
+            }
+        }
+        // Check for the enemy tag
+        else if (collision.CompareTag("Enemy"))
+        {
+            // Destroy the enemy
+            Destroy(collision.gameObject);
+        }
+        // Check for bricks with the "Fake" tag
+        else if (collision.CompareTag("Fake"))
+        {
+            // Reset the player to the start position
+            PlayerScript playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+            if (playerScript != null)
+            {
+                playerScript.ResetToStart();
+            }
         }
     }
 }

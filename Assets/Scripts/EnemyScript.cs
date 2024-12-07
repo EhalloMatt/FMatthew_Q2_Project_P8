@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public GameObject deathEffect; // Assign the BloodEffect prefab here
-
-    public int health = 1; // Number of hits the enemy can take
+    public int health = 3; // Enemy health
+    public int goldReward = 5; // Amount of gold to give on death
+    public GameObject deathEffect; // Assign a particle effect for death (optional)
+    private bool isDead = false; // Flag to prevent multiple death triggers
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        Debug.Log("Enemy health: " + health);
+        if (isDead) return; // Prevent taking damage after death
+
+        health -= damage; // Subtract health
 
         if (health <= 0)
         {
@@ -19,14 +21,20 @@ public class EnemyScript : MonoBehaviour
 
     private void Die()
     {
-        // Spawn the blood effect
+        if (isDead) return; // Prevent multiple triggers
+        isDead = true;
+
+        // Play death effect
         if (deathEffect != null)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
         }
-        else
+
+        // Add gold to the player
+        GoldCounter goldCounter = FindObjectOfType<GoldCounter>();
+        if (goldCounter != null)
         {
-            Debug.LogWarning("Death effect is not assigned!");
+            goldCounter.AddGold(goldReward);
         }
 
         // Destroy the enemy

@@ -9,7 +9,6 @@ public class BrickScript : MonoBehaviour
     {
         if (canBreakByBullet && collision.CompareTag("Bullets"))
         {
-            Debug.Log("Brick hit by bullet! Destroying brick...");
 
             // Play the particle effect at the brick's position
             if (breakEffectPrefab != null)
@@ -24,7 +23,6 @@ public class BrickScript : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("No break effect prefab assigned to this brick!");
             }
 
             Destroy(gameObject); // Destroy the brick

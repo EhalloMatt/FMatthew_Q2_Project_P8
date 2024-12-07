@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class GoldPickup : MonoBehaviour
+{
+    public int goldAmount = 1; // Amount of gold this collectible gives
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if the collider belongs to the Player
+        if (collision.CompareTag("Player"))
+        {
+            // Find the GoldCounter script and add gold
+            GoldCounter goldCounter = FindObjectOfType<GoldCounter>();
+            if (goldCounter != null)
+            {
+                goldCounter.AddGold(goldAmount);
+            }
+
+            // Destroy the coin after collection
+            Destroy(gameObject);
+        }
+    }
+}

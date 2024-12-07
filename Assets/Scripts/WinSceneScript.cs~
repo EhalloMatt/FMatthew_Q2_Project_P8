@@ -1,0 +1,24 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class WinScreenScript : MonoBehaviour
+{
+    // Called when the Restart button is clicked
+    public void RestartGame()
+    {
+        // Reload the current game scene (assuming your game scene is the first one in the build index)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    // Called when the Quit button is clicked
+    public void QuitGame()
+    {
+        // Quit the application
+        Application.Quit();
+
+        // If testing in the Unity Editor, stop the play mode
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+}
