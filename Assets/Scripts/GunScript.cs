@@ -5,6 +5,13 @@ public class GunScript : MonoBehaviour
     public GameObject bulletPrefab; // Bullet prefab
     public Transform firePoint; // FirePoint transform
     public float bulletForce = 20f; // Bullet speed
+    public AudioClip gunShotSound; // Gunshot sound
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
 
     public void Initialize(GameObject bullet, Transform fire)
     {
@@ -35,8 +42,11 @@ public class GunScript : MonoBehaviour
         {
             rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
         }
-        else
+
+        // Play gunshot sound
+        if (gunShotSound != null)
         {
+            audioSource.PlayOneShot(gunShotSound);
         }
     }
 }
