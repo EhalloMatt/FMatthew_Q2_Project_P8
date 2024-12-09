@@ -4851,7 +4851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7707617443038861163}
-  moveSpeed: 5
+  moveSpeed: 2
   detectionRange: 17
   damageAmount: 1
   showDetectionRange: 1
