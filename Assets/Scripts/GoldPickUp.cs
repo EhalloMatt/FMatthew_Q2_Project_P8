@@ -2,44 +2,25 @@ using UnityEngine;
 
 public class GoldPickUp : MonoBehaviour
 {
-    public int goldAmount = 1;
+    public int goldValue = 1;
     public AudioClip pickupSound;
-    [Range(0, 1)] public float pickupVolume = 1f;
 
-    private AudioSource audioSource;
-
-    private void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Add AudioSource at runtime
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-
-        if (pickupSound == null)
+        if (collision.CompareTag("Player"))
         {
-            Debug.LogWarning($"Pickup sound not assigned to GoldPickup script on {gameObject.name}");
-        }
-        else
-        {
-            Debug.Log($"Pickup sound assigned correctly to GoldPickup script on {gameObject.name}");
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Add gold to player
-            Debug.Log($"Player picked up {goldAmount} gold!");
-
-            // Play pickup sound if assigned
-            if (pickupSound != null)
+            GoldCounter goldCounter = FindObjectOfType<GoldCounter>();
+            if (goldCounter != null)
             {
-                audioSource.volume = pickupVolume; // Set volume
-                audioSource.PlayOneShot(pickupSound);
+                goldCounter.AddGold(goldValue);
             }
 
-            // Destroy the gold object after pickup
-            Destroy(gameObject);
+            if (pickupSound != null)
+            {
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+            }
+
+            Destroy(gameObject); // Remove the gold pickup after collection
         }
     }
 }

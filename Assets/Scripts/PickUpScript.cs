@@ -1,24 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickUpScript : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D col)
+    public int healthAmount = 1;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (col.gameObject.tag == "Player")
+        HealthScript healthScript = other.GetComponent<HealthScript>();
+        if (healthScript != null)
         {
-            var player = col.GetComponent<HealthScript>();
-            if (gameObject.tag == "AddHealth")
-            {
-                player.AddHealth();
-            }
-            else if (gameObject.tag == "AddContainer")
-            {
-                player.AddContainer();
-            }
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
+            healthScript.AddHealth(healthAmount);
+            Destroy(gameObject); // Destroy the health pickup after use
         }
     }
 }

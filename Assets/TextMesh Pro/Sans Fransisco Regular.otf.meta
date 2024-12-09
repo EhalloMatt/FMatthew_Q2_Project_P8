@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: aa945552ccda05446aa2f8c0abc45351
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sans Fransisco
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7432bf06353c6d74db628e2b1a58465d, type: 3}
+  - {fileID: 12800000, guid: 9829de55267365540be0a8981101d7b2, type: 3}
+  - {fileID: 12800000, guid: 638ca54196d7caf43955e056b599c013, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

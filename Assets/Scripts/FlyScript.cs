@@ -1,82 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class FlyScript : MonoBehaviour
 {
-    [SerializeField] Sprite deadSprite;
-    [SerializeField] GameObject player;
-    Transform playerPos;
-    Vector2 currentPos;
-    [SerializeField] float distance;
-    [SerializeField] float ememySpeed;
-    SpriteRenderer sr;
+    public Transform player; // Reference to the player
+    public float moveSpeed = 2f; // Speed at which the fly moves
+    public float detectionRange = 5f; // Range within which the fly detects the player
+    public int damageAmount = 1; // Damage amount when the fly collides with the player
+    public bool showDetectionRange = true; // Toggle to show detection range in the editor
 
-    // Start is called before the first frame update
+    private Vector3 startingPosition;
+
     void Start()
     {
-        playerPos = player.GetComponent<Transform>();
-        currentPos = GetComponent<Transform>().position;
-        sr = GetComponent<SpriteRenderer>();
-
+        startingPosition = transform.position; // Save the initial position for resetting
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerPos.position) < distance)
-        {
-            transform.position = Vector2.MoveTowards
-                (transform.position, playerPos.position, ememySpeed * Time.deltaTime);
+        float distanceToPlayer = Vector3.Distance(player.position, transform.position);
 
+        if (distanceToPlayer <= detectionRange)
+        {
+            // Move towards the player
+            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
         else
         {
-            if (Vector2.Distance(transform.position,
-                currentPos) <= 0)
-            {
-                //do nothing
-            }
-            else
-            {
-                transform.position = Vector2.MoveTowards
-                    (transform.position, currentPos, ememySpeed * Time.deltaTime);
-            }
-        }
-    }
-     void OnCollisionEnter2D(Collision2D col)
-    {
-        Vector2 normal = col.contacts[0].normal;
-        if(normal.y <= -.5)
-        {
-            StartCoroutine(Die());
-        }
-        else
-        {
-            player.GetComponent<HealthScript>().Damage();
+            // Move back to the starting position
+            transform.position = Vector3.MoveTowards(transform.position, startingPosition, moveSpeed * Time.deltaTime);
         }
     }
 
-    IEnumerator Die()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        sr.sprite = deadSprite;
-        GetComponent<Animator>().enabled = false;
-        GetComponent<Collider2D>().enabled = false;
-        enabled = false;
-
-        float alpha = 1f;
-        while (alpha > 0)
+        HealthScript healthScript = collision.GetComponent<HealthScript>();
+        if (healthScript != null)
         {
-            yield return null;
-            alpha -= Time.deltaTime;
-            sr.color = new Color(1, 1, 1, alpha);
+            healthScript.Damage(damageAmount); // Pass the damage amount when colliding
         }
     }
 
-     private void OnDrawGizmosSelected()
+    // Draw the detection range in the editor
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, distance);
-
+        if (showDetectionRange)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
+        }
     }
 }

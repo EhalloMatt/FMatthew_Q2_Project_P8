@@ -1,39 +1,67 @@
 using UnityEngine;
-using TMPro;
+using TMPro;  // Include TextMeshPro namespace
 
 public class GoldCounter : MonoBehaviour
 {
-    public int CurrentGold { get; private set; } // Holds the current gold count
-    public TextMeshProUGUI goldCounterText; // Reference to the TextMeshPro UI text
+    public static GoldCounter Instance; // Singleton for easy access
+    public int totalGold = 0; // The total amount of gold
+    public TextMeshProUGUI goldText; // Reference to the TextMeshPro text component
 
-    void Start()
+    private void Awake()
     {
-        UpdateGoldUI(); // Initialize UI with the current gold amount
-    }
-
-    public void AddGold(int amount)
-    {
-        CurrentGold += amount;
-        Debug.Log($"Gold added. Current Gold: {CurrentGold}");
-        UpdateGoldUI(); // Update UI whenever gold is added
-    }
-
-    public void SpendGold(int amount)
-    {
-        CurrentGold -= amount;
-        Debug.Log($"Gold spent. Current Gold: {CurrentGold}");
-        UpdateGoldUI(); // Update UI whenever gold is spent
-    }
-
-    private void UpdateGoldUI()
-    {
-        if (goldCounterText != null)
+        // Ensure only one instance of GoldCounter exists
+        if (Instance == null)
         {
-            goldCounterText.text = $"Gold: {CurrentGold}"; // Update the gold counter text
+            Instance = this;
         }
         else
         {
-            Debug.LogWarning("Gold Counter TextMeshPro reference is not assigned!");
+            Destroy(gameObject); // Destroy duplicate if it exists
+        }
+    }
+
+    private void Start()
+    {
+        // Initialize the gold text display
+        UpdateGoldDisplay();
+    }
+
+    // Property to get the current amount of gold
+    public int CurrentGold
+    {
+        get { return totalGold; }
+    }
+
+    // Method to add gold to the total
+    public void AddGold(int amount)
+    {
+        totalGold += amount;
+        UpdateGoldDisplay(); // Update the UI text whenever gold is added
+    }
+
+    // Method to spend (or deduct) gold
+    public bool SpendGold(int amount)
+    {
+        if (totalGold >= amount)
+        {
+            totalGold -= amount;
+            UpdateGoldDisplay(); // Update the UI text whenever gold is spent
+            return true; // Successfully spent gold
+        }
+        else
+        {
+            Debug.Log("Not enough gold to spend.");
+            return false; // Not enough gold to spend
+        }
+    }
+
+    // Method to update the gold display in the UI
+    private void UpdateGoldDisplay()
+    {
+        // Ensure we only update if goldText is assigned
+        if (goldText != null)
+        {
+            goldText.text = "Gold: " + totalGold.ToString();
         }
     }
 }

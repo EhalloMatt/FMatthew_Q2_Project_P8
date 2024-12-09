@@ -1,76 +1,45 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
-    [Header("Life")]
-    public int Health = 3;
-    public int numOfHearts;
-    [SerializeField] Image[] hearts;
-    [SerializeField] Sprite fullHeart;
-    [SerializeField] Sprite emptyHeart;
-    // Start is called before the first frame update
+    public int maxHealth = 5; // Maximum hearts the player can have
+    public int currentHealth = 3; // Starting hearts
+    public GameObject[] heartContainers; // Array for heart sprites
 
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        HealthSystem();
+        UpdateHealthDisplay();
     }
 
-    private void HealthSystem()
+    public void Damage(int damageAmount)
     {
-        if (Health > numOfHearts)
-        {
-            Health = numOfHearts;
-        }
-        for (int i = hearts.Length - 1; i >= 0; i--)
-        {
-            if (i < Health)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-            if (i < numOfHearts)
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
-            }
-        }
-        
+        currentHealth -= damageAmount;
+        if (currentHealth < 0) currentHealth = 0;
+        UpdateHealthDisplay();
 
-    }
-
-    public void Damage()
-    {
-        Health--;
-        if (Health <= 0)
+        if (currentHealth == 0)
         {
-            Debug.Log("You Lose");
+            LoseGame();
         }
     }
 
-    public void AddHealth()
+    public void AddHealth(int healthAmount)
     {
-        Health++;
+        currentHealth += healthAmount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        UpdateHealthDisplay();
     }
 
-    public void AddContainer()
+    private void UpdateHealthDisplay()
     {
-        Health++;
-        if(numOfHearts <= hearts.Length)
+        for (int i = 0; i < heartContainers.Length; i++)
         {
-            numOfHearts += 1;
+            heartContainers[i].SetActive(i < currentHealth);
         }
+    }
+
+    private void LoseGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LoseScene");
     }
 }

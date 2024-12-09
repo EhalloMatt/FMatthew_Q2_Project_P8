@@ -1,19 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class WinScreenScript : MonoBehaviour
+public class WinSceneScript : MonoBehaviour
 {
-    public void RestartGame()
+    public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Map"); // Replace "Map" with the name of your main game scene
     }
 
-    public void QuitGame()
+    public void Quit()
     {
         Application.Quit();
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        Debug.Log("Quit Game"); // Works only in a built application
     }
 }

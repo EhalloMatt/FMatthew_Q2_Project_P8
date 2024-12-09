@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class KillZoneScript : MonoBehaviour
 {
+    // Checkbox to decide if the KillZone should reset the player
+    [SerializeField] private bool resetOnCollisionWithPlayer = true;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check for the player tag
-        if (collision.CompareTag("Player"))
+        if (resetOnCollisionWithPlayer && collision.CompareTag("Player"))
         {
             // Reset the player to the start position
             PlayerScript playerScript = collision.GetComponent<PlayerScript>();
@@ -16,14 +18,12 @@ public class KillZoneScript : MonoBehaviour
                 playerScript.ResetToStart();
             }
         }
-        // Check for the enemy tag
         else if (collision.CompareTag("Enemy"))
         {
             // Destroy the enemy
             Destroy(collision.gameObject);
         }
-        // Check for bricks with the "Fake" tag
-        else if (collision.CompareTag("Fake"))
+        else if (resetOnCollisionWithPlayer && collision.CompareTag("Fake"))
         {
             // Reset the player to the start position
             PlayerScript playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();

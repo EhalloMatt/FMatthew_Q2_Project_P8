@@ -2,51 +2,39 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Bullet prefab
-    public Transform firePoint; // FirePoint transform
-    public float bulletForce = 20f; // Bullet speed
-    public AudioClip gunShotSound; // Gunshot sound
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float bulletForce = 20f;
+    public AudioClip gunShotSound;
     private AudioSource audioSource;
 
     private void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-    }
-
-    public void Initialize(GameObject bullet, Transform fire)
-    {
-        bulletPrefab = bullet;
-        firePoint = fire;
+        // Ensure the gun remains visible at game start
+        gameObject.SetActive(true);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetMouseButtonDown(0)) // Left click
         {
-            if (bulletPrefab != null && firePoint != null)
-            {
-                Fire();
-            }
-            else
-            {
-                Debug.LogWarning($"Bullet Prefab: {bulletPrefab}, Fire Point: {firePoint} not assigned!");
-            }
+            Shoot();
         }
     }
 
-    private void Fire()
+    private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (bulletPrefab != null && firePoint != null)
         {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
-        }
 
-        // Play gunshot sound
-        if (gunShotSound != null)
-        {
-            audioSource.PlayOneShot(gunShotSound);
+            if (audioSource != null && gunShotSound != null)
+            {
+                audioSource.PlayOneShot(gunShotSound);
+            }
         }
     }
 }

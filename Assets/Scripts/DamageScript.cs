@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageScript : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D col)
+    public int damageAmount = 1; // Amount of damage to inflict
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(col.gameObject.tag == "Player")
+        HealthScript healthScript = collision.GetComponent<HealthScript>();
+        if (healthScript != null)
         {
-            var player = col.GetComponent<HealthScript>();
-            player.Damage();
-}
+            healthScript.Damage(damageAmount);
+        }
     }
 }

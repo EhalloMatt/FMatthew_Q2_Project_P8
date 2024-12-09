@@ -1,0 +1,210 @@
+========================================================================================================================================
+COMPLETE FORTNITE SFX PACK // TWITTER @BulletRebel // https://www.youtube.com/user/BulletRebel
+========================================================================================================================================
+This SFX pack has almost every sound you need to make Fortnite content.
+It is updated regularly, so check the website for new updates.
+Contact me on Twitter or leave a comment on the original video for requests.
+
+The changelog below shows detailed updates to this SFX pack.
+WEBSITE: https://www.fortnitesfxpack.tk/
+
+========================================================================================================================================
+						UPDATES
+========================================================================================================================================
+----------------------------------------------------------------------------------------------------------------------------------------
+7 March 2020 - v12.10 Update / Season 2: Chapter 2
+----------------------------------------------------------------------------------------------------------------------------------------
+- Added Coral Commando Backbling to Misc > Backbling > Other
+
+- Added Agent Meowscles to Misc > Events > S2C1
+	- Added Discoverable, Present Effects and Holiday Tree Music Loop to Winterfest
+
+- Added Mellow Days to Misc > Music Packs
+
+- Added Alter Ego Outfit Transformation to Misc > Quest > Alter Ego
+
+- Added Dirt footsteps to Player > Movement > Footsteps > Dirt
+	- Removed 'Old' folder
+
+- Added Throwables to Player (Throwing health and shield consumables)
+	- Small, Medium, Large, Huge
+		- Pickup, Throw, Impact
+
+- Added Neo Residential Door to World Objects > Doors
+
+- Added 29 Emotes to Player > Emotes
+	- C'mere, Fishin', Freemix, I Declare!, Ninja Style, Party Hips, Poki, Raise the Roof, Shadow Spar
+	- Cap Kick, Focused, Light Up
+	- Members Only, Ollie Bounce, Pandemonium, Pump Pose, Sad Claps, Sasquatchin', Steamed
+	- Advanced Math, Beep Beep, Boom!, Call Me, Coin Flip, Paws & Claws, Phew!, Primo Moves, Side Hustle, Springy
+
+- Added Creepin' Cardboard to Consumables > Utility (Inventory)
+	- Close, Enter, Hit, Movement, Open, Placed, Throw
+
+- Added Grotto and Yacht Ambient sounds to Environment > POIs
+
+- Added 4 Music Packs to Misc > Music Packs
+	- Bunny Bounce, Limitless, Spies!, Sunny Samba
+
+- Added S12 Spy Lobby sounds to Misc > UI > S12 Lobby
+	- Armory, Barracks, Bathroom, Battle Pass, Challenge Board, Challenge Table, Elevator, Factions, Lobby, Maya, Punching bag, Valve
+
+- Added Henchman and Faction Boss sounds to new folder 'NPC' in Player
+	- Faction Boss (Vox)
+		- Brutus, Meowscles, Midas, Skye, TnTina
+			- Alerted, DBNO, Idle, Return Idle, Shakedown, Suspicious, Target Lost
+	- Henchman
+		- Disguise, Movement, Ping, Shakedown, Vox
+
+- Added Proximity Mine to Weapons > Explosives > Thrown Explosives
+	- Activate, Ambient Loop, Explosion, Interact, Throw
+
+- Added Decoy Grenades to Weapons > Explosives > Thrown Explosives
+	- Clone, Equip, Explosion
+
+- Added Common RPG sounds to Weapons > Explosives > Launchers > RPG > Normal
+	- Split sounds between RPG (Epic) and RPG (Common)
+	- Added Reload Mix for RPG (Epic) and removed Reload Elements
+	- Improved naming of certain RPG sounds for better clarity
+
+- Updated Flint-Knock Reload Mix in Weapons > Pistols > Flint-Knock > Reload Elements
+
+- World Objects: Added 7 items
+	- Air Duct
+		- Impact, Interact, Land, Step
+	- Security Camera
+		- Alarm, Destroy, Impact, Move, Power, Scan, Target, Vox
+	- Security Turret
+		- Destroy, Impact, Move, Other, Scan, Shot, Target
+	- Security Generator
+		- Sparks, Loop
+	- Hideouts
+		- Phone Booth, Secret Passage
+	- Doors
+		- Faction Vault
+			- Impact, Keycard, Open
+	- Treasure Chest
+		- Moved previous sounds into new 'Normal' folder
+		- Added Faction Chest
+
+----------------------------------------------------------------------------------------------------------------------------------------
+21 December 2019 - v11.30 Update / Winterfest
+----------------------------------------------------------------------------------------------------------------------------------------
+- Moved "World Objects" folder from environment to root
+	- Added Frozen Loot, Ice Machine, Upgrade Station to World Objects
+
+- Added "Snowstorm" and "Winter" to Environment > Biomes > Snow
+
+- Added "DJ Booth Music" to Environment > Other > Dance Floors
+
+- Added "Ice Hotel" to Environment > POIs
+
+- Added "Lump of Coal" to Consumables > Utility (Inventory)
+
+- Added throw sounds to Sneaky Snowman in Utility (Inventory) > Sneaky Snowman
+
+- Added Lightsaber, First Order Blaster Rifle and Heavy AR (Epic) to Weapons
+	- New Heavy AR found in Weapons > Assault Rifles > Heavy
+	- Added HAR (Epic) ADS sounds to Weapons > _ADS
+	- Lightsaber includes regular and Kylo Ren variants
+		- Clash, Deflect, Dodge, Impact, Interact, Poise, Swing
+	- FOBR: Flyby, Impact, Interact, Overheat, Shot
+
+- Added Outfit transformation sound to Misc > Quest > Mystery Skin > Alter Ego
+
+- Added Winterfest and Star Wars events to Misc > Events
+	- Star Wars Premiere once again had mostly ADPCM sounds which are not included here
+		- Big Screen, Chest, Crash Site, Lobby, Millenium Falcon, Respawn, Show, Skydive, TIE Fighter
+	- Winterfest includes: Cabin, Camera, Crackshot, Presents (Shake, Open and XP)
+
+- Added 17 emotes to Player > Emotes
+	- Around the CLock, Feelin' Jaunty, Leapin', Glyphic, Ring it On, Snow Day, Snowshaker, Traitor!, Xylo-Bone
+	- Banner Wave, Dark Side, Have a Seat, Jedi Training, Power Roar, Resistance Thumbs Up, Ride Along, Shaolin Sip
+
+- Added 6 Music Packs to Misc > Music Packs
+	- Battle Breakers, Stand and Fight, Frostnite, Unreal Chill, Merry Chipmas, The Crackdown
+
+----------------------------------------------------------------------------------------------------------------------------------------
+5 November 2019 - v11.10 Update / Harpoon Gun
+----------------------------------------------------------------------------------------------------------------------------------------
+- IMPORTANT: Season 11 is the last season the SFX pack will be supported. More details are found on the homepage of the website
+	- https://www.fortnitesfxpack.tk/
+
+- REMOVED shortcut for Fishing Rod
+	- It is still located in Consumables > Utility (Inventory)
+	- I wasn't sure how to classify it since it isn't a weapon, but not a consumable either. However, it is a utility item.
+
+- Added 6 emotes to Player > Emotes
+	- Ballsy, Fright Funk, Pump it Up, Witchcraft, Unification, Zombified
+
+- Added Harpoon Gun to Weapons > Grappler
+	- Impact, Interact, Other, Reattach, Reel In, Shot
+
+- Added Pumpkin Launcher Laugh to Weapons > Explosives > Launchers > RPG > Pumpkin
+	- Renamed launcher from RPGP to Pumpkin RPG
+	- Added subfolder organization
+
+- Added Storm King LTM to LTMs > Storm King
+	- Biome, Laser Attack, Meteor Attack, Hit, Other
+
+- Added Haunted Furniture quest to Misc > Quest
+
+- Added Storm King Music Pack to Misc > Music Packs
+	- Added 'MP' prefix to music packs that were missing it
+
+----------------------------------------------------------------------------------------------------------------------------------------
+20 October 2019 - v11.00 Update / Chapter 2
+----------------------------------------------------------------------------------------------------------------------------------------
+- Reorganized the folder structure of the entire SFX pack
+	- Use the search feature if you have trouble finding the sound you need
+	- Separated and regrouped many sounds to reduce overcrowded 'Misc' folder
+		- 'Player' is everything related to direct player actions
+		- 'Environment' is world objects, map sounds, ambience
+		- 'Building' is sounds related to edit or build mode
+		- 'Demolition' is harvesting destruction sounds
+
+- Weapons with different sounds based on rarity are put in their respective folders
+	- Example: Shotguns > 'Tactical (Common)' and 'Tactical (Epic)'
+	- Weapons of same type such as revolver are now grouped together in the same folder
+
+- Removed most 'Old' and 'OG' sound variants
+	- 'New' folder has become the main folder
+	- Newer sounds will now replace the older ones to reduce overall file size of SFX pack
+	- I doubt anyone needs them anymore, but contact me if you do
+ 
+- ADDED to Environment
+	- Biomes: Alpine, Coastal, Dirty Docks, Farm, Generic, Grassland, Highlands, Orchard, Powerplant, Swamp, Town, Woods, Water
+	- Destructibles: Gas Pump, Propane Tank
+	- World Objects: Cooling Tower, Dam, Fishstick, Halloween, Lawn Light, Other, Powerplant, Transformer, Turbine, TV, Hideouts
+	- Storm: Lightning, Storm, Thunder (Gameplay storm is separate from ambient storm)
+	- Water: Ocean, Rapids, River, Underwater, Waterfall
+
+- ADDED to Misc > Events
+	- The End: Black Hole, Piano Snippet, Rift Beacon, Rocket, Space Rocks, Visitor Tapes
+	- Other sounds are in ADPCM format and are impossible to convert to an audible format
+
+- ADDED to Consumables
+	- Healing > Health & Shield: Fish, Slurp Mushroom, Slurp Water, Slurp Vat, Slurp Tower, Slurp Barrel
+	- Utility (Inventory): Fishing Rod, Rusty Can, Mythic Goldfish
+		- ADDED a shortcut to Fishing Rod in Weapons folder
+
+- ADDED to Player
+	- Movement: Carry, Swimming, Skydiving [Updated]
+	- Toys: Snowball Impact
+	- Emotes: Boing!, Double Up, Droop, Go Home!, High Five, Poof, Respect the Peace, Sharpshooter, Statuesque, Hula Hoopin'
+	Tilt, Welcome!, Disc Spinner, Island Vibes, Levitate, Martial Arts Master, Peely Pulse, Pirouette, Wavy T, Team Space, Harmony 
+
+
+- ADDED to Misc
+	- Music Packs: S11 Intro Skydive (Not really an MP but it fits here), Smooth Groove, Storm Shredder, The End
+	- UI: XP
+
+- ADDED to Vehicles
+	- Motorboat: Explosion, Impact, Interact, Movement, Rocket
+
+- ADDED to Weapons
+	- Assault Rifles: Normal AR Shot (No Shells), Epic AR shot [Replaced]
+	- Burst Rifles: Burst (Epic) [AUG], Burst (Common) [FAMAS]
+	- BFGs: Bandage Bazooka
+	- Snipers: Bolt-Action (Epic)
+	- Pistols > Normal: Pistol (Epic)
