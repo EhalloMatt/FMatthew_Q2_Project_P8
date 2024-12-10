@@ -50,7 +50,6 @@ public class GoldCounter : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough gold to spend.");
             return false; // Not enough gold to spend
         }
     }

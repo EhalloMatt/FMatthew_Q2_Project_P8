@@ -5,6 +5,8 @@ public class HealthScript : MonoBehaviour
     public int maxHealth = 5; // Maximum hearts the player can have
     public int currentHealth = 3; // Starting hearts
     public GameObject[] heartContainers; // Array for heart sprites
+    [SerializeField] private AudioClip damageSound; // Sound to play when a heart is lost
+    [SerializeField] private AudioSource audioSource; // Reference to an AudioSource component
 
     void Start()
     {
@@ -15,6 +17,8 @@ public class HealthScript : MonoBehaviour
     {
         currentHealth -= damageAmount;
         if (currentHealth < 0) currentHealth = 0;
+
+        PlayDamageSound();
         UpdateHealthDisplay();
 
         if (currentHealth == 0)
@@ -41,5 +45,13 @@ public class HealthScript : MonoBehaviour
     private void LoseGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("LoseScene");
+    }
+
+    private void PlayDamageSound()
+    {
+        if (audioSource != null && damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+        }
     }
 }

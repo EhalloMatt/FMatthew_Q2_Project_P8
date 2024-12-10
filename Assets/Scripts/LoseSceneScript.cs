@@ -11,6 +11,5 @@ public class LoseSceneScript : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
-        Debug.Log("Quit Game"); // Works only in a built application
     }
 }

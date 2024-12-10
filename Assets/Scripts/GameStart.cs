@@ -6,6 +6,6 @@ public class MainMenu : MonoBehaviour
     // Function to load the game scene
     public void StartGame()
     {
-        SceneManager.LoadScene("Map"); // Replace "YourGameSceneName" with your actual scene name
+        SceneManager.LoadScene("Map"); 
     }
 }

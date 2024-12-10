@@ -32,7 +32,6 @@ public class BulletPool : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Bullet Pool is empty!");
             return null;
         }
     }

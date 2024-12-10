@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -8,8 +6,8 @@ public class PlayerScript : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float speed;
     [SerializeField] ParticleSystem Dust;
-    [SerializeField] AudioClip footstepSound; // Footstep sound clip
-    [SerializeField] float footstepInterval = 0.5f; // Time interval between footsteps
+    [SerializeField] AudioClip footstepSound;
+    [SerializeField] float footstepInterval = 0.5f;
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer sr;
@@ -25,7 +23,6 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] int jumpValue;
     bool isGrounded;
     int extraJumps;
-    AudioSource jumpSound;
 
     Vector2 startPosition;
 
@@ -37,7 +34,6 @@ public class PlayerScript : MonoBehaviour
         extraJumps = jumpValue;
         startPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
-        jumpSound = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -71,7 +67,7 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            isPlayingFootsteps = false; // Stop footsteps when not moving
+            isPlayingFootsteps = false;
         }
     }
 
@@ -100,16 +96,9 @@ public class PlayerScript : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && extraJumps > 0)
         {
-            rb.velocity = Vector2.up * jumpForce;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             extraJumps--;
             animator.SetTrigger("TakeOff");
-            jumpSound.Play();
-        }
-        else if (Input.GetButtonDown("Jump") && extraJumps == 0 && isGrounded)
-        {
-            rb.velocity = Vector2.up * jumpForce;
-            animator.SetTrigger("TakeOff");
-            jumpSound.Play();
         }
     }
 

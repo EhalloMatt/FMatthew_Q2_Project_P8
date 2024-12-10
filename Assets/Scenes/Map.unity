@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 42547580}
   - component: {fileID: 42547579}
   - component: {fileID: 42547578}
+  - component: {fileID: 42547582}
   m_Layer: 3
   m_Name: Non Breakable (22)
   m_TagString: Fake
@@ -156,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &42547579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -268,6 +270,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &42547582
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42547577}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &86683262
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +317,7 @@ GameObject:
   - component: {fileID: 86683267}
   - component: {fileID: 86683265}
   - component: {fileID: 86683264}
+  - component: {fileID: 86683268}
   m_Layer: 0
   m_Name: Non Breakable (2)
   m_TagString: Fake
@@ -316,6 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &86683265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -413,6 +452,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &86683268
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86683262}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &100167309
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +499,8 @@ GameObject:
   - component: {fileID: 100167313}
   - component: {fileID: 100167312}
   - component: {fileID: 100167311}
+  - component: {fileID: 100167314}
+  - component: {fileID: 100167315}
   m_Layer: 0
   m_Name: Non Breakable (25)
   m_TagString: Fake
@@ -461,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 1
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 8300000, guid: 6f204feade4bf294c907010189805f95, type: 3}
 --- !u!61 &100167312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -558,6 +635,137 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &100167314
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100167309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!82 &100167315
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100167309}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6f204feade4bf294c907010189805f95, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &104220635
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +810,7 @@ GameObject:
   - component: {fileID: 158597949}
   - component: {fileID: 158597946}
   - component: {fileID: 158597945}
+  - component: {fileID: 158597950}
   m_Layer: 0
   m_Name: Non Breakable (14)
   m_TagString: Fake
@@ -638,6 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &158597946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -748,6 +958,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetOnCollisionWithPlayer: 1
+--- !u!58 &158597950
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158597943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &183347348
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +1006,7 @@ GameObject:
   - component: {fileID: 183347354}
   - component: {fileID: 183347351}
   - component: {fileID: 183347350}
+  - component: {fileID: 183347355}
   m_Layer: 0
   m_Name: Non Breakable (4)
   m_TagString: Fake
@@ -797,6 +1043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &183347351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -907,6 +1154,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetOnCollisionWithPlayer: 1
+--- !u!58 &183347355
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183347348}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &185298270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1740,7 @@ GameObject:
   - component: {fileID: 322452887}
   - component: {fileID: 322452886}
   - component: {fileID: 322452888}
+  - component: {fileID: 322452889}
   m_Layer: 0
   m_Name: Non Breakable (5)
   m_TagString: Fake
@@ -1591,6 +1874,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
+--- !u!58 &322452889
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322452884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &328092032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1922,7 @@ GameObject:
   - component: {fileID: 328092036}
   - component: {fileID: 328092035}
   - component: {fileID: 328092034}
+  - component: {fileID: 328092037}
   m_Layer: 3
   m_Name: Non Breakable (7)
   m_TagString: Fake
@@ -1639,6 +1959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &328092035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1736,6 +2057,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &328092037
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328092032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &364463614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,7 +2124,7 @@ Transform:
   m_GameObject: {fileID: 364463614}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.013311649, z: -0, w: 0.9999114}
-  m_LocalPosition: {x: -14.1, y: 44.3, z: 0.7}
+  m_LocalPosition: {x: -7.06, y: 51.81, z: 0.4}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1987,9 +2343,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 7707617443038861163}
   moveSpeed: 5
-  detectionRange: 15
+  detectionRange: 22.9
   damageAmount: 1
   showDetectionRange: 1
+  collisionSound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
+  destroySound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
 --- !u!1 &375016388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,6 +2360,8 @@ GameObject:
   - component: {fileID: 375016390}
   - component: {fileID: 375016389}
   - component: {fileID: 375016392}
+  - component: {fileID: 375016393}
+  - component: {fileID: 375016394}
   m_Layer: 3
   m_Name: BreakableBox
   m_TagString: Untagged
@@ -2118,8 +2478,7 @@ Transform:
   m_LocalPosition: {x: 41.686996, y: 2.6690013, z: -0.017710699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 661605024}
+  m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &375016392
@@ -2136,6 +2495,138 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 1
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 8300000, guid: 6f204feade4bf294c907010189805f95, type: 3}
+--- !u!58 &375016393
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375016388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!82 &375016394
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375016388}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6f204feade4bf294c907010189805f95, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &381934136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2390,6 +2881,8 @@ MonoBehaviour:
   detectionRange: 5
   damageAmount: 1
   showDetectionRange: 1
+  collisionSound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
+  destroySound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
 --- !u!1 &398070606
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2895,7 @@ GameObject:
   - component: {fileID: 398070610}
   - component: {fileID: 398070609}
   - component: {fileID: 398070608}
+  - component: {fileID: 398070611}
   m_Layer: 3
   m_Name: Non Breakable (19)
   m_TagString: Fake
@@ -2438,6 +2932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &398070609
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2535,6 +3030,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &398070611
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398070606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &398101614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,6 +3535,7 @@ GameObject:
   - component: {fileID: 495858833}
   - component: {fileID: 495858832}
   - component: {fileID: 495858831}
+  - component: {fileID: 495858835}
   m_Layer: 3
   m_Name: Non Breakable (25)
   m_TagString: Fake
@@ -3026,6 +3557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &495858832
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3138,6 +3670,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &495858835
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495858830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &535061155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,7 +4155,7 @@ Transform:
   m_GameObject: {fileID: 649348281}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: 15.2, z: -1.8}
+  m_LocalPosition: {x: -59.2, y: 0.7, z: 2.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3600,19 +4167,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 375016391}
+    m_TransformParent: {fileID: 1879407027}
     m_Modifications:
     - target: {fileID: 2208868456626597050, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: 41.656998
       objectReference: {fileID: 0}
     - target: {fileID: 2208868456626597050, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: 2.6290016
       objectReference: {fileID: 0}
     - target: {fileID: 2208868456626597050, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.017710699
       objectReference: {fileID: 0}
     - target: {fileID: 2208868456626597050, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3653,6 +4220,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9052527947463712865, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1713516683}
+    - targetCorrespondingSourceObject: {fileID: 9052527947463712865, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1713516686}
   m_SourcePrefab: {fileID: 100100000, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
 --- !u!4 &661605024 stripped
 Transform:
@@ -3847,6 +4417,7 @@ GameObject:
   - component: {fileID: 698322599}
   - component: {fileID: 698322597}
   - component: {fileID: 698322596}
+  - component: {fileID: 698322600}
   m_Layer: 0
   m_Name: Non Breakable (12)
   m_TagString: Fake
@@ -3883,6 +4454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &698322597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3980,6 +4552,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &698322600
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698322594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &719900933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,6 +4600,7 @@ GameObject:
   - component: {fileID: 719900938}
   - component: {fileID: 719900935}
   - component: {fileID: 719900937}
+  - component: {fileID: 719900939}
   m_Layer: 0
   m_Name: Non Breakable
   m_TagString: Fake
@@ -4126,6 +4734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 1
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!114 &719900938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4139,6 +4748,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetOnCollisionWithPlayer: 1
+--- !u!58 &719900939
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719900933}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &783316099
 GameObject:
   m_ObjectHideFlags: 0
@@ -4151,6 +4795,8 @@ GameObject:
   - component: {fileID: 783316103}
   - component: {fileID: 783316102}
   - component: {fileID: 783316101}
+  - component: {fileID: 783316104}
+  - component: {fileID: 783316105}
   m_Layer: 0
   m_Name: Non Breakable (27)
   m_TagString: Fake
@@ -4187,6 +4833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 1
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 8300000, guid: 6f204feade4bf294c907010189805f95, type: 3}
 --- !u!61 &783316102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4284,6 +4931,137 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &783316104
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783316099}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!82 &783316105
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783316099}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 6f204feade4bf294c907010189805f95, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &791474528
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,7 +5304,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 2.8362775, y: 1}
+    newSize: {x: 1.1948582, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -4580,7 +5358,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 2.8362775, y: 1}
+  m_Size: {x: 1.1948582, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4595,7 +5373,7 @@ Transform:
   m_GameObject: {fileID: 865066356}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.081497, y: 15.019999, z: -0.017710699}
+  m_LocalPosition: {x: -39.5436, y: 15.019999, z: -0.017710699}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4633,8 +5411,8 @@ Transform:
   m_GameObject: {fileID: 892030727}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.013311649, z: -0, w: 0.9999114}
-  m_LocalPosition: {x: 0.9, y: 43, z: 1}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalPosition: {x: 45.8, y: 43.21, z: 0.1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 271248952}
@@ -4855,6 +5633,8 @@ MonoBehaviour:
   detectionRange: 17
   damageAmount: 1
   showDetectionRange: 1
+  collisionSound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
+  destroySound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
 --- !u!1 &904543220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5141,6 +5921,7 @@ GameObject:
   - component: {fileID: 994628015}
   - component: {fileID: 994628014}
   - component: {fileID: 994628013}
+  - component: {fileID: 994628017}
   m_Layer: 3
   m_Name: Non Breakable (18)
   m_TagString: Fake
@@ -5162,6 +5943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &994628014
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5274,6 +6056,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &994628017
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994628012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1027188896
 GameObject:
   m_ObjectHideFlags: 0
@@ -5560,6 +6377,7 @@ GameObject:
   - component: {fileID: 1173571147}
   - component: {fileID: 1173571146}
   - component: {fileID: 1173571145}
+  - component: {fileID: 1173571148}
   m_Layer: 3
   m_Name: Non Breakable (9)
   m_TagString: Fake
@@ -5596,6 +6414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1173571146
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5693,6 +6512,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1173571148
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173571143}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1180127293
 GameObject:
   m_ObjectHideFlags: 0
@@ -5835,6 +6689,7 @@ GameObject:
   - component: {fileID: 1180537983}
   - component: {fileID: 1180537982}
   - component: {fileID: 1180537981}
+  - component: {fileID: 1180537985}
   m_Layer: 3
   m_Name: Non Breakable (20)
   m_TagString: Fake
@@ -5856,6 +6711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1180537982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5968,6 +6824,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1180537985
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180537980}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1192860942
 GameObject:
   m_ObjectHideFlags: 0
@@ -6112,90 +7003,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1284732920
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1284732922}
-  - component: {fileID: 1284732921}
-  m_Layer: 0
-  m_Name: cloud1 (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &1284732921
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284732920}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8466098313c620840a43d7aa405a52ef, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.8285714, y: 1.0142857}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1284732922
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284732920}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.5, y: -4.75, z: -7.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294669204
 GameObject:
   m_ObjectHideFlags: 0
@@ -6354,6 +7161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c48504796704edbb5637b444dd63b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneSwitchSound: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &1297863044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,6 +7305,7 @@ GameObject:
   - component: {fileID: 1320344100}
   - component: {fileID: 1320344099}
   - component: {fileID: 1320344098}
+  - component: {fileID: 1320344101}
   m_Layer: 0
   m_Name: Non Breakable (23)
   m_TagString: Fake
@@ -6532,6 +7342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1320344099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6629,6 +7440,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1320344101
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320344096}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1340144432
 GameObject:
   m_ObjectHideFlags: 0
@@ -7161,6 +8007,7 @@ GameObject:
   - component: {fileID: 1398762678}
   - component: {fileID: 1398762677}
   - component: {fileID: 1398762676}
+  - component: {fileID: 1398762680}
   m_Layer: 3
   m_Name: Non Breakable (24)
   m_TagString: Fake
@@ -7182,6 +8029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1398762677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7294,6 +8142,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1398762680
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398762675}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1410999390
 GameObject:
   m_ObjectHideFlags: 0
@@ -7437,6 +8320,7 @@ GameObject:
   - component: {fileID: 1426920599}
   - component: {fileID: 1426920598}
   - component: {fileID: 1426920597}
+  - component: {fileID: 1426920600}
   m_Layer: 3
   m_Name: Non Breakable (13)
   m_TagString: Fake
@@ -7473,6 +8357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1426920598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7570,6 +8455,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1426920600
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426920595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1511757123
 GameObject:
   m_ObjectHideFlags: 0
@@ -7916,6 +8836,7 @@ GameObject:
   - component: {fileID: 1646824396}
   - component: {fileID: 1646824395}
   - component: {fileID: 1646824397}
+  - component: {fileID: 1646824398}
   m_Layer: 0
   m_Name: Non Breakable (6)
   m_TagString: Fake
@@ -8049,6 +8970,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
+--- !u!58 &1646824398
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646824393}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1672837257
 GameObject:
   m_ObjectHideFlags: 0
@@ -8303,6 +9260,7 @@ GameObject:
   - component: {fileID: 1676985131}
   - component: {fileID: 1676985130}
   - component: {fileID: 1676985129}
+  - component: {fileID: 1676985132}
   m_Layer: 3
   m_Name: Non Breakable (11)
   m_TagString: Fake
@@ -8339,6 +9297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1676985130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8436,6 +9395,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1676985132
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676985127}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1706849680
 GameObject:
   m_ObjectHideFlags: 0
@@ -8448,6 +9442,7 @@ GameObject:
   - component: {fileID: 1706849683}
   - component: {fileID: 1706849682}
   - component: {fileID: 1706849684}
+  - component: {fileID: 1706849685}
   m_Layer: 3
   m_Name: Non Breakable (1)
   m_TagString: Fake
@@ -8581,6 +9576,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
+--- !u!58 &1706849685
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706849680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1713516680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9052527947463712865, guid: 79620166fe9d94ef4974ae65b9579733, type: 3}
@@ -8600,6 +9631,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 1
   breakEffectPrefab: {fileID: 0}
+  destroySound: {fileID: 0}
+--- !u!58 &1713516686
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713516680}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1815584077
 GameObject:
   m_ObjectHideFlags: 0
@@ -8612,6 +9679,7 @@ GameObject:
   - component: {fileID: 1815584082}
   - component: {fileID: 1815584080}
   - component: {fileID: 1815584079}
+  - component: {fileID: 1815584083}
   m_Layer: 0
   m_Name: Non Breakable (10)
   m_TagString: Fake
@@ -8648,6 +9716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1815584080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8745,6 +9814,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1815584083
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815584077}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1816831050
 GameObject:
   m_ObjectHideFlags: 0
@@ -8791,6 +9895,7 @@ GameObject:
   - component: {fileID: 1832123932}
   - component: {fileID: 1832123931}
   - component: {fileID: 1832123930}
+  - component: {fileID: 1832123934}
   m_Layer: 3
   m_Name: Non Breakable (26)
   m_TagString: Fake
@@ -8812,6 +9917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1832123931
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8924,6 +10030,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1832123934
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832123929}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1846422618
 GameObject:
   m_ObjectHideFlags: 3
@@ -9003,6 +10144,7 @@ GameObject:
   - component: {fileID: 1859082213}
   - component: {fileID: 1859082212}
   - component: {fileID: 1859082211}
+  - component: {fileID: 1859082215}
   m_Layer: 3
   m_Name: Non Breakable (21)
   m_TagString: Fake
@@ -9024,6 +10166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1859082212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9136,6 +10279,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1859082215
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859082210}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1879407026
 GameObject:
   m_ObjectHideFlags: 0
@@ -9166,6 +10344,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 375016391}
+  - {fileID: 661605024}
   - {fileID: 719900934}
   - {fileID: 1706849681}
   - {fileID: 86683263}
@@ -9210,6 +10389,7 @@ GameObject:
   - component: {fileID: 1883339823}
   - component: {fileID: 1883339822}
   - component: {fileID: 1883339821}
+  - component: {fileID: 1883339825}
   m_Layer: 3
   m_Name: Non Breakable (19)
   m_TagString: Fake
@@ -9231,6 +10411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1883339822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9343,6 +10524,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1883339825
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883339820}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1891160641
 GameObject:
   m_ObjectHideFlags: 0
@@ -9355,6 +10571,7 @@ GameObject:
   - component: {fileID: 1891160644}
   - component: {fileID: 1891160643}
   - component: {fileID: 1891160642}
+  - component: {fileID: 1891160646}
   m_Layer: 3
   m_Name: Non Breakable (23)
   m_TagString: Fake
@@ -9376,6 +10593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1891160643
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9488,6 +10706,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1879407027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1891160646
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891160641}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1897907275
 GameObject:
   m_ObjectHideFlags: 0
@@ -9500,6 +10753,7 @@ GameObject:
   - component: {fileID: 1897907279}
   - component: {fileID: 1897907278}
   - component: {fileID: 1897907277}
+  - component: {fileID: 1897907280}
   m_Layer: 3
   m_Name: Non Breakable (22)
   m_TagString: Fake
@@ -9536,6 +10790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1897907278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9633,6 +10888,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1897907280
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897907275}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1938085496
 GameObject:
   m_ObjectHideFlags: 0
@@ -9645,6 +10935,7 @@ GameObject:
   - component: {fileID: 1938085500}
   - component: {fileID: 1938085499}
   - component: {fileID: 1938085498}
+  - component: {fileID: 1938085501}
   m_Layer: 0
   m_Name: Non Breakable (24)
   m_TagString: Fake
@@ -9681,6 +10972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &1938085499
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9778,6 +11070,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1938085501
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938085496}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1963900462
 GameObject:
   m_ObjectHideFlags: 0
@@ -9925,6 +11252,7 @@ GameObject:
   - component: {fileID: 2028436460}
   - component: {fileID: 2028436457}
   - component: {fileID: 2028436456}
+  - component: {fileID: 2028436461}
   m_Layer: 0
   m_Name: Non Breakable (8)
   m_TagString: Fake
@@ -9961,6 +11289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &2028436457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10071,6 +11400,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetOnCollisionWithPlayer: 1
+--- !u!58 &2028436461
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028436454}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &2052141473
 GameObject:
   m_ObjectHideFlags: 0
@@ -10326,6 +11690,7 @@ GameObject:
   - component: {fileID: 2084806575}
   - component: {fileID: 2084806573}
   - component: {fileID: 2084806572}
+  - component: {fileID: 2084806576}
   m_Layer: 3
   m_Name: Non Breakable (3)
   m_TagString: Fake
@@ -10362,6 +11727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBreakByBullet: 0
   breakEffectPrefab: {fileID: 1713516680}
+  destroySound: {fileID: 0}
 --- !u!61 &2084806573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10472,6 +11838,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetOnCollisionWithPlayer: 1
+--- !u!58 &2084806576
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084806570}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &2088028023
 GameObject:
   m_ObjectHideFlags: 0
@@ -10611,7 +12012,7 @@ Transform:
   m_GameObject: {fileID: 4125167489799506900}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.18, y: 24.56, z: 0.2407367}
+  m_LocalPosition: {x: 16.06, y: 26.85, z: 0.2407367}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10656,6 +12057,8 @@ MonoBehaviour:
   - {fileID: 595342023695742871}
   - {fileID: 1169378029328934901}
   - {fileID: 6917075431355894991}
+  damageSound: {fileID: 8300000, guid: c60cc9f32b266e34389df0c25d819e2b, type: 3}
+  audioSource: {fileID: 8464949464715733554}
 --- !u!4 &87742660714904945
 Transform:
   m_ObjectHideFlags: 0
@@ -11020,7 +12423,7 @@ Transform:
   m_GameObject: {fileID: 5762830584917672672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.37, y: 23.66, z: 0.2407367}
+  m_LocalPosition: {x: 29.41, y: 27.19, z: 0.2407367}
   m_LocalScale: {x: -5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11323,7 +12726,7 @@ Transform:
   m_GameObject: {fileID: 268106333153249162}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -967.18, y: -541.59, z: 0}
+  m_LocalPosition: {x: -968.3, y: -539.1, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11348,7 +12751,7 @@ GameObject:
   - component: {fileID: 6420112438025277258}
   - component: {fileID: 8464949464715733553}
   - component: {fileID: 8464949464715733554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -17458,6 +18861,8 @@ MonoBehaviour:
   detectionRange: 5
   damageAmount: 1
   showDetectionRange: 1
+  collisionSound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
+  destroySound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
 --- !u!1 &6917075431355894991
 GameObject:
   m_ObjectHideFlags: 0
@@ -17789,6 +19194,8 @@ MonoBehaviour:
   detectionRange: 5
   damageAmount: 1
   showDetectionRange: 1
+  collisionSound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
+  destroySound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
 --- !u!4 &7707617443038861163
 Transform:
   m_ObjectHideFlags: 0
@@ -17934,6 +19341,8 @@ MonoBehaviour:
   detectionRange: 5
   damageAmount: 1
   showDetectionRange: 1
+  collisionSound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
+  destroySound: {fileID: 8300000, guid: 435d7c2238ec1e74c82aa2ba389466cd, type: 3}
 --- !u!1 &8015389478336971431
 GameObject:
   m_ObjectHideFlags: 0
@@ -18127,7 +19536,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   Dust: {fileID: 2161179816493351732}
-  footstepSound: {fileID: 8300000, guid: 853466db38104ef4bafead62c4eaeb69, type: 3}
+  footstepSound: {fileID: 8300000, guid: b68d4df6156f4224ea488aee5e5e8e75, type: 3}
   footstepInterval: 0.3
   jumpForce: 5
   groundCheck: {fileID: 87742660714904945}
@@ -18250,8 +19659,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6125b4f70516b9844823b61e915e3bb1, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: c60cc9f32b266e34389df0c25d819e2b, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -18465,5 +19874,4 @@ SceneRoots:
   - {fileID: 1514780982}
   - {fileID: 104220636}
   - {fileID: 1419885345}
-  - {fileID: 1284732922}
   - {fileID: 649348283}
